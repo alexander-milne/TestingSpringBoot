@@ -1,0 +1,14 @@
+
+#docker kill [OPTIONS] CONTAINER [CONTAINER...]
+
+#create db
+CREATE DATABASE spring_boot_postgres_db;
+#ENTER DB
+\c spring_boot_postgres_db
+
+#once in db generate uuid
+
+CREATE EXTENSION "uuid-ossp";
+uuid_generate_v4();
+
+INSERT INTO person (id, name) VALUES (uuid_generate_v4(), '');
